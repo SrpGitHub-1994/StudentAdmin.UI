@@ -1,0 +1,61 @@
+<div class="page-heaer">
+<div class="container">
+<h1>Student List</h1>
+</div>
+</div>
+<div class="container" style="align-items: center;">
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+        <!-- Name Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+    
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef> First Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+          </ng-container>
+    
+        <!-- Last name Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Lastname </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+      
+      
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="doB">
+          <th mat-header-cell *matHeaderCellDef> Birth Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.doB | date:'dd-MMM-yyyy'}} </td>
+        </ng-container>
+      
+            <!-- emailid Column -->
+            <ng-container matColumnDef="gender">
+                <th mat-header-cell *matHeaderCellDef> Gender </th>
+                <td mat-cell *matCellDef="let element"> {{element.gender.description}} </td>
+              </ng-container>
+    
+        <!-- emailid Column -->
+        <ng-container matColumnDef="emailid">
+          <th mat-header-cell *matHeaderCellDef> Email ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.emailid}} </td>
+        </ng-container>
+    
+        <!-- emailid Column -->
+        <ng-container matColumnDef="mobileNo">
+            <th mat-header-cell *matHeaderCellDef> MobileNo </th>
+            <td mat-cell *matCellDef="let element"> {{element.mobileNo}} </td>
+          </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>
+
+  
+  
+

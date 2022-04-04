@@ -49,11 +49,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { TopNavComponent } from './Layout/top-nav/top-nav.component';
+import { StudentsComponent } from './students/students.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TopNavComponent
+    TopNavComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import { TopNavComponent } from './Layout/top-nav/top-nav.component';
     MatTooltipModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule,
   ],
   schemas:[
 
