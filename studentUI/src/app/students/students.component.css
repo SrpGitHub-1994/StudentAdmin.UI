@@ -6,7 +6,23 @@ table {
 
   table th{
       font-size: medium;
-      font-weight: 500;
+      font-weight: 600;
       color: black;
-      background-color: darkcyan;
+      background-color:lightcyan;
   }
+
+  .search-input{
+      outline: none;
+      border:1px solid #ccc;
+      padding:8px 12px;
+      border-radius: 5px;
+      font-size: medium;
+  }
+
+  .search-input:active{
+      border-color: blue;
+  }
+
+  .search-input:focus{
+    border-color: yellow;
+}

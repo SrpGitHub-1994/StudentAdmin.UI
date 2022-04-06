@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Student } from '../Models/Ui-Models/StudentUI';
 import { StudentService } from './student.service';
@@ -17,6 +19,9 @@ export class StudentsComponent implements OnInit {
   'mobileNo','gender'];
   datasource:MatTableDataSource<Student>=new MatTableDataSource<Student>();
 
+  @ViewChild(MatPaginator) matpaginator!:MatPaginator;
+  @ViewChild(MatSort) matsrt!:MatSort;
+  filterstring='';
   ngOnInit(): void {
 
     // fetch the All Students
@@ -28,6 +33,17 @@ this.students=successresponse;
  // console.log(successresponse[0].gender);
  // console.log(successresponse[0].lastName);
  this.datasource=new MatTableDataSource<Student>(this.students);
+
+ if(this.matpaginator)
+ {
+   this.datasource.paginator=this.matpaginator;
+ }
+
+ if(this.matsrt)
+ {
+   this.datasource.sort=this.matsrt;
+ }
+
 },
 (errorresponse)=>
 {
@@ -35,5 +51,10 @@ this.students=successresponse;
 }
 );
   }
+
+FilterStudent()
+{
+this.datasource.filter=this.filterstring.trim().toLowerCase();
+}
 
 }
