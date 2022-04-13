@@ -17,5 +17,8 @@ export class StudentService {
   {
     return this.Httpclient.get<Student[]>(this.baseUrl+'/student');
   }
-
+  GetStudentDetails(id:string):Observable<Student>
+  {
+    return this.Httpclient.get<Student>(this.baseUrl+'/student/'+id);
+  }
 }

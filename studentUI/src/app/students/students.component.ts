@@ -16,7 +16,7 @@ export class StudentsComponent implements OnInit {
 
   public students:Student[]=[];
   displayedColumns: string[] = ['id','firstName', 'lastName', 'doB', 'emailid',
-  'mobileNo','gender'];
+  'mobileNo','gender','edit'];
   datasource:MatTableDataSource<Student>=new MatTableDataSource<Student>();
 
   @ViewChild(MatPaginator) matpaginator!:MatPaginator;
